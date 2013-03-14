@@ -11,7 +11,9 @@ jsonData.tekenteller = {
     "<a href=\"jquery\/jquery.jqEasyCharCounter.js\">plugin code<\/a>"
   ],
   "js":"$(document).ready(function($) {\r\n  $('#testtextarea').jqEasyCounter({\r\n    msgString: 'U kunt nog %left% tekens invoeren.',\r\n    msgSingleCharString: 'U kunt nog 1 teken invoeren.',\r\n    maxChars: 100,\r\n    maxCharsWarning: 90\r\n  });\r\n});",
-  "voorbeeld":"<textarea id=\"testtextarea\" cols=\"50\" rows=\"5\"><\/textarea><div class=\"max-warning\">Max. 100 tekens<\/div>",
+  "voorbeeld":
+    "<img src=\"images/telraam.png\">" +
+    "<textarea id=\"testtextarea\" cols=\"50\" rows=\"5\"><\/textarea><div class=\"max-warning\">Max. 100 tekens<\/div>",
   "schakelaar": true
 };
 
