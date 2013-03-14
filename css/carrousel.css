@@ -42,14 +42,17 @@ root {
   float: left;
 }
 .innerblok {
-  margin: 180px 0 0 20px;;
+  margin: 180px 0 0 20px;
+}
+#carrouselcontainer .innerblok {
+  margin: 220px 0 0 70px;
 }
 .blok.slide1 {
-  background: url('../images/achtergrond_1.png') no-repeat;
+  background: url('../images/bos-1.png') no-repeat;
 }
 .blok.slide2 {
-  background: url('../images/achtergrond_2.png') no-repeat;
+  background: url('../images/bos-2.png') no-repeat;
 }
 .blok.slide3 {
-  background: url('../images/achtergrond_3.png') no-repeat;
+  background: url('../images/bos-3.png') no-repeat;
 }

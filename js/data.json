@@ -24,8 +24,8 @@ jsonData.carrousel = {
     "Timer stopt als de gebruiker een paginanummer kiest",
     "<a href=\"jquery\/jquery.divs2carrousel.js\">plugin code<\/a>"
   ],
-  "js":"$('#carrouselcontainer').carrousel({\r\n  carrouselSlideDuration: 3000\r\n});",
-  "voorbeeld":"<div id=\"carrouselcontainer\">\r\n      <div class=\"blok slide1\">\r\n        <div class=\"innerblok\">\r\n        <p>Pagina 1<\/p>\r\n        <\/div>\r\n      <\/div>\r\n      <div class=\"blok slide2\">\r\n        <div class=\"innerblok\">\r\n        <p>Pagina 2<\/p>\r\n        <\/div>\r\n      <\/div>\r\n      <div class=\"blok slide3\">\r\n        <div class=\"innerblok\">\r\n        <p>Pagina 3<\/p>\r\n        <\/div>\r\n      <\/div>\r\n    <\/div>\r\n",
+  "js":"$('#carrouselcontainer').carrousel({\n  carrouselSlideDuration: 3000\n});",
+  "voorbeeld":"<div id=\"carrouselcontainer\"><div class=\"blok slide1\"><div class=\"innerblok\"><p>Afbeelding 1</p></div></div><div class=\"blok slide2\"><div class=\"innerblok\"><p>Afbeelding 2</p><\/div></div><div class=\"blok slide3\"><div class=\"innerblok\"><p>Afbeelding 3</p></div></div></div>",
   "schakelaar": true
 };
 
