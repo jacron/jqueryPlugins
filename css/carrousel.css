@@ -1,4 +1,4 @@
-/* 
+/*
     Document   : carroussel.css
     Created on : 22-okt-2012, 15:01:10
     Author     : jan
@@ -6,7 +6,7 @@
         Purpose of the stylesheet follows.
 */
 
-root { 
+root {
   display: block;
 }
 
@@ -42,7 +42,7 @@ root {
   float: left;
 }
 .innerblok {
-  margin: 210px 0 0 20px;;
+  margin: 180px 0 0 20px;;
 }
 .blok.slide1 {
   background: url('../images/achtergrond_1.png') no-repeat;

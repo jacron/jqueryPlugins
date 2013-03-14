@@ -16,6 +16,7 @@ body {
   padding:0;
   margin:0;
   color:#333;
+  font-size: 14px;
 }
 .h1, .h2, #footer, #footer a {
   color:#66ab16;
@@ -37,12 +38,13 @@ a {
   font-family: arial;
 }
 #header, #footer {
-  background-color: #033;
   padding: 8px;
 }
+#header{
+  background-color: #255;
+}
 #footer {
-  /*position: fixed;
-  bottom: 0;*/
+  background-color: #dee;
   clear:both;
   font-size: 0.9em;
   width:100%;
@@ -107,4 +109,6 @@ pre {
   background-color: #eee;
   line-height: 20px;
   padding: 8px;
+  width: 500px;
+  overflow-x: auto;
 }

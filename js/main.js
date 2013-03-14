@@ -1,65 +1,47 @@
 $(function() {
 
-  // init snippet
-  function applySnippet() {
-    $(function(){
-//      $('pre#html').escapehtml();
-/*
-      $('pre#html').snippet('html', {
-        style: 'emacs',
-        showNum: false
-      });
-      $('pre#js').snippet('javascript', {
-        style: 'emacs',
-        showNum: false
-      });
-*/
-    });
-  }
+  var selectedAction;
 
   // vul teksten in voor voorbeeld
-  function displayDemo(header, descriptionHtml, descriptionJs, js, html, features, voorbeeld) {
+  function displayDemo(action) {
+    var data = jsonData[action];
     $test.removeClass('selected');
 
-    $('#content-header').text(header);
-    $('#beschrijving-html').html(descriptionHtml);
-    $('#beschrijving-js').html(descriptionJs);
-    $('pre#html').html(html);
-    $('pre#js').html(js);
-    $('#voorbeeld').html(voorbeeld);
+    $('#content-header').text(data.header);
+    $('#beschrijving-js').html(data.descriptionJs);
+    $('pre#html').html(data.html);
+    $('pre#js').html(data.js);
+    $('#voorbeeld').html(data.voorbeeld);
+    $('#jstest').toggle(data.schakelaar);
 
-    var html = '', i=0;
-    for(; i<features.length; i++) {
-      html += '<li>' + features[i] + '</li>';
+    var html = '', i = 0;
+    for(; i < data.features.length; i++) {
+      html += '<li>' + data.features[i] + '</li>';
     }
     $('#kenmerken').html(html);
-    applySnippet();
+
+    selectedAction = action;
+    $.cookie('selectedAction', selectedAction);
+
+    if (action == 'wisselcitaat') {
+      $('.quotes').randomquote();
+    }
   }
 
-  //
-  function requestJson(action) {
-    $.ajax({
-      data: {
-        ajax: action
-      },
-      dataType: 'json',
-      success: function(data, status){
-        displayDemo(data.header, data.descriptionHtml, data.descriptionJs,
-          data.js, data.html, data.features, data.voorbeeld);
-      },
-      error: function(data, msg) {
-        console.log(msg);
-      }
-    });
-
-  }
   // handle navigation
-  $('#tekenteller').click(function(){
-    requestJson('tekenteller');
+  $('.action').click(function(){
+    displayDemo(this.id)
   });
-  $('#carrousel').click(function() {
-    requestJson('carrousel');
-  });
+
+  // Inhoud en titel van de dialoog die waarschuwt dat de tijd bijna verstreken is.
+  var warnDialogContent =
+'<div class="warning-expiration" style="display:none">' +
+'<p>Als u %duur% minuten niets heeft opgeslagen, wordt u automatisch uitgelogd. ' +
+'Dit is ingesteld om uw gegevens zo goed mogelijk te beveiligen. Niet opgeslagen gegevens zullen verloren gaan.</p>' +
+'<p>Wilt u ingelogd blijven? Klik dan op de knop OK.</p>' +
+'</div>',
+      warnDialogTitle =
+  'Over <span class="timer-tekst">%duur%</span> minuten wordt u automatisch uitgelogd!';
 
   // handle javascript schakelaar
   var $test = $('#test');
@@ -72,8 +54,8 @@ $(function() {
       $test.addClass('selected');
 
       // actie hangt af van gekozen voorbeeld
-      switch($('#content-header').text()) {
-        case 'Tekenteller':
+      switch(selectedAction) {
+        case 'tekenteller':
 
           // verberg statische melding
           $('.max-warning').hide();
@@ -86,15 +68,38 @@ $(function() {
             maxCharsWarning: 90
           });
           break;
-        case 'Carrousel':
+        case 'carrousel':
           $('#carrouselcontainer').carrousel({
             carrouselSlideDuration: 3000
           });
+          break;
+        case 'timer':
+          $('#sessie-timer-tekst').sessietimer({
+            'sessieDuur' : $('#sessieduur').val(),
+            'waarschuwingsGrens' : $('#waarschuwingslimiet').val(),
+            'afterExpiration': function() {
+                $('.options-expiration').hide();
+              }
+            }, '#sessie-timer-verlengen', warnDialogContent, warnDialogTitle
+          );
+          break;
+        case 'validatie':
+
+          break;
+        case 'tekstlade':
+          $('#tips').textdrawer();
+          break;
+        case 'wisselcitaat':
+          // geen schakelaar op deze demo-pagina
           break;
       }
     }
   });
 
-    requestJson('tekenteller');
+    var action = 'tekenteller';
+    if ($.cookie('selectedAction') && typeof $.cookie('selectedAction') != 'undefined') {
+      action = $.cookie('selectedAction');
+    }
+    displayDemo(action);
 
 });
