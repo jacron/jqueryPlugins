@@ -1,0 +1,55 @@
+/* 
+    Document   : carroussel.css
+    Created on : 22-okt-2012, 15:01:10
+    Author     : jan
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+  display: block;
+}
+
+#carrousel a {
+  text-decoration: none;
+}
+#carrousel-control {
+  margin-top: 12px;
+}
+#carrousel-control .page,
+#prevSlide,
+#nextSlide {
+  margin-right: 6px;
+}
+#carrousel-control .page,
+#prevSlide,
+#nextSlide {
+  font-weight: normal;
+  color: #333;
+  background-color: #eee;
+}
+#carrousel-control .page.selected {
+  font-weight: bold;
+  color: #f60;
+  background-color: #ccc;
+}
+.blok {
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 4px 1px #ccc;
+  width: 225px;
+  height: 250px;
+  margin: 10px 0 0 10px;
+  float: left;
+}
+.innerblok {
+  margin: 210px 0 0 20px;;
+}
+.blok.slide1 {
+  background: url('../images/achtergrond_1.png') no-repeat;
+}
+.blok.slide2 {
+  background: url('../images/achtergrond_2.png') no-repeat;
+}
+.blok.slide3 {
+  background: url('../images/achtergrond_3.png') no-repeat;
+}

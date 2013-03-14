@@ -1,0 +1,8 @@
+Na aanpassen joyride plugin.
+In IE valt de border om de ballonpijl weg.
+Wit met randje is dus niet met de triangel techniek te bereiken 
+(wel op FF of Chrome, zij het dat daar de border te licht uitvalt)
+alternatief is een transparent gifj, maar dan moet je de afmeting weer fixeren.
+NB Ik heb ooit een complexere triangel techniek gezien, die pseudo class :after gebruikte,
+die wel cross browser het gewenste randje gaf.
+zie http://konigi.com/tools/css-tooltips-and-speech-bubbles

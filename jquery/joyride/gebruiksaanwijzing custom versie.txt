@@ -1,0 +1,31 @@
+Voorbeeld fragment:
+
+  <ol id="joyrideWerkmap">
+    <!-- 0. start rondleiding -->
+    <li data-id="startJoyride" data-text="Doe de rondleiding" data-options="tipLocation:start" class="joyrideStart">
+      <div class="joyrideHead">Rondleiding werkm@p</div>
+      <p>
+        U kunt om te beginnen een rondleiding volgen.
+      </p>
+    </li>
+    <!-- 1. Taken en sollicitaties -->
+    <li data-text="Volgende" data-text-prev="Vorige" data-anchor="Mijn sollicitaties">
+      <div class="joyrideHead">Mijn taken en Mijn sollicitaties</div>
+      <p>
+        Via Mijn taken geeft u elke maand minimaal 4 (sollicitatie-)activiteiten aan ons door.
+        Ook wordt er van u verwacht dat u andere taken binnen een gestelde termijn afrondt.
+      </p>
+      <img src="/<?php print drupal_get_path('theme', 'werknl');?>/xdocs/images/werknl/werkmapTour/takenSollicitatiesPlaatje.gif"/>
+    </li>
+
++++++++++++
+Toelichting
++++++++++++
+
+In plaats van een attribuut data-id kan ook een attribuut data-anchor gebruikt worden.
+Deze bevat de tekst van een menu-optie.
+De dialoog zal dan naar de parent van de menu-optie wijzen.
+Hierdoor kunnen we elementen adresseren waarvan we de id niet kennen.
+
+Verder is een attribuut data-text-prev toegevoegd, om een knop Vorige met
+een bepaalde tekst te krijgen.
