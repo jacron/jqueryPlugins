@@ -112,3 +112,14 @@ pre {
   width: 500px;
   overflow-x: auto;
 }
+div#login-tile {
+  display: inline-block;
+  background: url('../images/background-note.png') no-repeat;
+  width:160px;
+  height: 134px;
+  margin-top: 12px;
+  padding: 26px 2px 0 20px;
+}
+div#login-tile ul {
+  list-style-type: circle;
+}

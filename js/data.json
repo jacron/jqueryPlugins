@@ -41,8 +41,16 @@ jsonData.timer = {
       '<a href="jquery/jquery.sessietimer.js">plugin code</a>'
   ],
   "js":"$('#sessie-timer-tekst').sessietimer({\r\n    'sessieDuur' : $('#sessieduur').val(),\r\n    'waarschuwingsGrens' : $('#waarschuwingslimiet').val(),\r\n    'afterExpiration': function() {\r\n      $('.options-expiration').hide();\r\n    }\r\n  }, '#sessie-timer-verlengen', warnDialogContent, warnDialogTitle\r\n);",
-  "voorbeeld":"<input type=\"text\" id=\"sessieduur\" value=\"5\" size=\"5\">\r\n  <label for=\"sessieduur\">Sessie duur (minuten)<\/label> <br>\r\n      <input type=\"text\" id=\"waarschuwingslimiet\" value=\"4\" size=\"5\">\r\n<label for=\"waarschuwingslimiet\">Waarschuwingslimiet (minuten)<\/label><br>\r\n" +
-    " <p>\r\n          Welkom, <strong>admin</strong>. <span id=\"sessie-timer-tekst\"><\/span>\r\n        <\/p>\r\n        <p class=\"options-expiration\">\r\n          <a href=\"#\" id=\"sessie-timer-verlengen\">Sessie verlengen<\/a> | <a href=\"#\">Uitloggen<\/a>\r\n        <\/p>",
+  "voorbeeld":
+    "<input type=\"text\" id=\"sessieduur\" value=\"5\" size=\"5\">\n" +
+    "<label for=\"sessieduur\">Sessie duur (minuten)</label> <br>\n" +
+    "<input type=\"text\" id=\"waarschuwingslimiet\" value=\"4\" size=\"5\">\n" +
+    "<label for=\"waarschuwingslimiet\">Waarschuwingslimiet (minuten)</label><br>\n" +
+    "<div id=\"login-tile\">" +
+    " Welkom, <strong>admin</strong>. <span id=\"sessie-timer-tekst\"></span>\n"+
+    "<ul><li><a href=\"#\" id=\"sessie-timer-verlengen\">Sessie verlengen</a></li>" +
+    "<li><a href=\"#\">Uitloggen</a></li></ul>\n" +
+    "</div>\n",
   "schakelaar": true
 };
 
@@ -69,7 +77,13 @@ jsonData.tekstlade = {
       '<a href="jquery/jquery.textdrawer.js">plugin code</a>'
   ],
   "js":"$('#tips').textdrawer();",
-  "voorbeeld":"<div id=\"tips\"><h4>Tips bij dit menu</h4><div><ul><li>Druk op de toetsen omhoog/omlaag om een item te selecteren - of klik op een item.<\/li>\r\n        <li>Druk op enter om een demo over het geselecteerde item te openen - of klik op Naar de demo.</li></ul></div></div>",
+  "voorbeeld":
+    "<img src=\"images/lade.png\">" +
+    "<div id=\"tips\"><h4>Tips bij dit menu</h4>" +
+    "<div><ul>" +
+    "<li>Druk op de toetsen omhoog/omlaag om een item te selecteren - of klik op een item.</li>" +
+    "<li>Druk op enter om een demo over het geselecteerde item te openen - of klik op Naar de demo.</li>" +
+    "</ul></div></div>",
   "schakelaar": true
 };
 
