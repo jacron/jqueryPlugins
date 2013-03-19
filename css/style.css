@@ -18,7 +18,7 @@ body {
   color:#333;
   font-size: 14px;
 }
-.h1, .h2, #footer, #footer a {
+.h1, #content-header, #footer, #footer a {
   color:#66ab16;
 }
 .h1 {
@@ -33,9 +33,10 @@ a {
 #wrapper {
   width: 1000px;
   margin: 0 auto 0 auto;
-  /*background-color: #FFF;*/
+  background-color: #FFF;
   color: #333;
   font-family: arial;
+  height:100%
 }
 #header, #footer {
   padding: 8px;
@@ -79,10 +80,14 @@ a {
   padding-left: 12px;
 }
 #content-header {
-  padding-top: 4px;
-  font-size: 1.1em;
+  padding: 4px 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 8px;
 }
-
+#beschrijving-html{
+  margin-bottom: 8px;
+}
 #error-message {
   color:red;
 }
@@ -122,4 +127,9 @@ div#login-tile {
 }
 div#login-tile ul {
   list-style-type: circle;
+}
+.max-warning {
+  width: 420px;
+  text-align: right;
+  font-size: 0.85em;
 }

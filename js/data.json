@@ -1,55 +1,59 @@
 var jsonData = {};
 
 jsonData.tekenteller = {
-  "header":"Tekenteller",
-  "descriptionHtml":"Bij het tekstvak staat, hoeveel tekens er maximaal mogen worden ingevoerd. Als\r\n      u de plugin inschakelt wordt de melding dynamisch.",
-  "descriptionJs":"Bij het aanroepen in javascript kunt u o.a. een sjabloontekst meegeven voor de melding.",
-  "features":[
+  "header": "Tekenteller",
+  "descriptionHtml": "Bij het tekstvak staat, hoeveel tekens er maximaal mogen worden ingevoerd. Als\r\n      u de plugin inschakelt wordt de melding dynamisch.",
+  "descriptionJs": "Bij het aanroepen in javascript kunt u o.a. een sjabloontekst meegeven voor de melding.",
+  "features": [
     "jqEasyCharCounter",
     "Hieraan heb ik toegevoegd: hoeveel tekens over?",
-    "<a href=\"http:\/\/www.jqeasy.com\/jquery-character-counter\/\">on line documentatie<\/a>",
-    "<a href=\"jquery\/jquery.jqEasyCharCounter.js\">plugin code<\/a>"
+    "<a href=\"http:\/\/www.jqeasy.com\/jquery-character-counter\/\">on line documentatie</a>",
+    "<a href=\"jquery\/jquery.jqEasyCharCounter.js\">plugin code</a>"
   ],
-  "js":"$(document).ready(function($) {\r\n  $('#testtextarea').jqEasyCounter({\r\n    msgString: 'U kunt nog %left% tekens invoeren.',\r\n    msgSingleCharString: 'U kunt nog 1 teken invoeren.',\r\n    maxChars: 100,\r\n    maxCharsWarning: 90\r\n  });\r\n});",
+  "js": "$(document).ready(function($) {\n  $('#testtextarea').jqEasyCounter({\n" +
+    "    msgString: 'U kunt nog %left% tekens invoeren.',\n" +
+    "    msgSingleCharString: 'U kunt nog 1 teken invoeren.',\n" +
+    "    maxChars: 100,\n    maxCharsWarning: 90\r\n  });\n});",
   "voorbeeld":
     "<img src=\"images/telraam.png\">" +
-    "<textarea id=\"testtextarea\" cols=\"50\" rows=\"5\"><\/textarea><div class=\"max-warning\">Max. 100 tekens<\/div>",
+    "<textarea id=\"testtextarea\" cols=\"50\" rows=\"5\"></textarea>" +
+    "<div class=\"max-warning\">max. 100 tekens</div>",
   "schakelaar": true
 };
 
 jsonData.carrousel = {
-  "header":"Carrousel",
-  "descriptionHtml":"Maak van een willekeurig aantal pagina's (divs binnen een div)\r\n      een carrousel met navigatieknoppen.",
-  "descriptionJs":"",
-  "features":[
+  "header": "Carrousel",
+  "descriptionHtml": "Maak van een willekeurig aantal pagina's (divs binnen een div)\r\n      een carrousel met navigatieknoppen.",
+  "descriptionJs": "",
+  "features": [
     "een willekeurig aantal plaatjes tot een carrousel maken's",
     "Timer stopt als de gebruiker een paginanummer kiest",
-    "<a href=\"jquery\/jquery.divs2carrousel.js\">plugin code<\/a>"
+    "<a href=\"jquery\/jquery.divs2carrousel.js\">plugin code</a>"
   ],
-  "js":"$('#carrouselcontainer').carrousel({\n  carrouselSlideDuration: 3000\n});",
-  "voorbeeld":"<div id=\"carrouselcontainer\"><div class=\"blok slide1\"><div class=\"innerblok\"><p>Afbeelding 1</p></div></div><div class=\"blok slide2\"><div class=\"innerblok\"><p>Afbeelding 2</p><\/div></div><div class=\"blok slide3\"><div class=\"innerblok\"><p>Afbeelding 3</p></div></div></div>",
+  "js": "$('#carrouselcontainer').carrousel({\n  carrouselSlideDuration: 3000\n});",
+  "voorbeeld": "<div id=\"carrouselcontainer\"><div class=\"blok slide1\"><div class=\"innerblok\"><p>Afbeelding 1</p></div></div><div class=\"blok slide2\"><div class=\"innerblok\"><p>Afbeelding 2</p><\/div></div><div class=\"blok slide3\"><div class=\"innerblok\"><p>Afbeelding 3</p></div></div></div>",
   "schakelaar": true
 };
 
 jsonData.timer = {
-  "header":"Timer",
-  "descriptionHtml":"De gebruiker wordt op een statusregel op de hoogte gehouden van het verstrijken van zijn sessie. Na een zekere - instelbare - periode verschijnt een waarschuwingsdialoog.",
-  "descriptionJs":"",
-  "features":[
-      'Standaard eens per seconde update',
-      'In te stellen waarschuwingstijd',
-      'Mee te geven teksten voor sessie-aan, sessie-bijna-uit en sessie-uit',
-      'De waarschuwingsdialoog gebruikt de jquery-ui-library',
-      '<a href="jquery/jquery.sessietimer.js">plugin code</a>'
+  "header": "Timer",
+  "descriptionHtml": "De gebruiker wordt op een statusregel op de hoogte gehouden van het verstrijken van zijn sessie. Na een zekere - instelbare - periode verschijnt een waarschuwingsdialoog.",
+  "descriptionJs": "",
+  "features": [
+    'Standaard eens per seconde update',
+    'In te stellen waarschuwingstijd',
+    'Mee te geven teksten voor sessie-aan, sessie-bijna-uit en sessie-uit',
+    'De waarschuwingsdialoog gebruikt de jquery-ui-library',
+    '<a href="jquery/jquery.sessietimer.js">plugin code</a>'
   ],
-  "js":"$('#sessie-timer-tekst').sessietimer({\r\n    'sessieDuur' : $('#sessieduur').val(),\r\n    'waarschuwingsGrens' : $('#waarschuwingslimiet').val(),\r\n    'afterExpiration': function() {\r\n      $('.options-expiration').hide();\r\n    }\r\n  }, '#sessie-timer-verlengen', warnDialogContent, warnDialogTitle\r\n);",
+  "js": "$('#sessie-timer-tekst').sessietimer({\r\n    'sessieDuur' : $('#sessieduur').val(),\r\n    'waarschuwingsGrens' : $('#waarschuwingslimiet').val(),\r\n    'afterExpiration': function() {\r\n      $('.options-expiration').hide();\r\n    }\r\n  }, '#sessie-timer-verlengen', warnDialogContent, warnDialogTitle\r\n);",
   "voorbeeld":
     "<input type=\"text\" id=\"sessieduur\" value=\"5\" size=\"5\">\n" +
     "<label for=\"sessieduur\">Sessie duur (minuten)</label> <br>\n" +
     "<input type=\"text\" id=\"waarschuwingslimiet\" value=\"4\" size=\"5\">\n" +
     "<label for=\"waarschuwingslimiet\">Waarschuwingslimiet (minuten)</label><br>\n" +
     "<div id=\"login-tile\">" +
-    " Welkom, <strong>admin</strong>. <span id=\"sessie-timer-tekst\"></span>\n"+
+    " Welkom, <strong>admin</strong>. <span id=\"sessie-timer-tekst\"></span>\n" +
     "<ul><li><a href=\"#\" id=\"sessie-timer-verlengen\">Sessie verlengen</a></li>" +
     "<li><a href=\"#\">Uitloggen</a></li></ul>\n" +
     "</div>\n",
@@ -57,28 +61,28 @@ jsonData.timer = {
 };
 
 jsonData.validatie = {
-  "header":"Validatie",
-  "descriptionHtml":"Legacy Javascript controle, omgezet naar een jQuery plugin.",
-  "descriptionJs":"",
-  "features":[
+  "header": "Validatie",
+  "descriptionHtml": "Legacy Javascript controle, omgezet naar een jQuery plugin.",
+  "descriptionJs": "",
+  "features": [
     'jQuery plugin die de velden van een formulier valideert',
     '<a href="jquery/jquery.validator.js">plugin code</a>'
   ],
-  "js":"",
-  "voorbeeld":"",
+  "js": "",
+  "voorbeeld": "",
   "schakelaar": true
 };
 
 jsonData.tekstlade = {
-  "header":"Tekstlade",
-  "descriptionHtml":"Onder een kopje staat verborgen tekst, die na een klik op het kopje verschijnt.",
-  "descriptionJs":"",
-  "features":[
-      'Voor het kopje staat plus of min',
-      'Klik op kopje maakt inhoud zichtbaar/onzichtbaar',
-      '<a href="jquery/jquery.textdrawer.js">plugin code</a>'
+  "header": "Tekstlade",
+  "descriptionHtml": "Onder een kopje staat verborgen tekst, die na een klik op het kopje verschijnt.",
+  "descriptionJs": "",
+  "features": [
+    'Voor het kopje staat plus of min',
+    'Klik op kopje maakt inhoud zichtbaar/onzichtbaar',
+    '<a href="jquery/jquery.textdrawer.js">plugin code</a>'
   ],
-  "js":"$('#tips').textdrawer();",
+  "js": "$('#tips').textdrawer();",
   "voorbeeld":
     "<img src=\"images/lade.png\">" +
     "<div id=\"tips\"><h4>Tips bij dit menu</h4>" +
@@ -90,28 +94,28 @@ jsonData.tekstlade = {
 };
 
 jsonData.wisselcitaat = {
-  "header":"Wissel-citaat",
-  "descriptionHtml":"Iedere keer als de pagina wordt geladen, een willekeurige tekst tonen.",
-  "descriptionJs":"",
-  "features":[
-      'Ververs de pagina voor een andere citaat (geen javascript schakelaar in deze demo)',
-      '<a href="jquery/jquery.randomquote.js">plugin code</a>'
+  "header": "Wissel-citaat",
+  "descriptionHtml": "Iedere keer als de pagina wordt geladen, een willekeurige tekst tonen.",
+  "descriptionJs": "",
+  "features": [
+    'Ververs de pagina voor een andere citaat (geen javascript schakelaar in deze demo)',
+    '<a href="jquery/jquery.randomquote.js">plugin code</a>'
   ],
-  "js":"$('.quotes').randomquote();",
-  "voorbeeld":"    <div class=\"quotes\">      <div class=\"blok slide1\">        <div class=\"innerblok\">        <p>Citaat 1</p>        <p>Beter een vogel in de hand dan tien in de lucht</p>        </div>      </div>      <div class=\"blok slide2\">        <div class=\"innerblok\">        <p>Citaat 2</p>        <p>Niet geschoten is altijd mis</p>        </div>      </div>      <div class=\"blok slide3\">        <div class=\"innerblok\">       <p>Citaat 3</p>        <p>De duvel is oud</p>        </div>      </div>    </div>",
+  "js": "$('.quotes').randomquote();",
+  "voorbeeld": "    <div class=\"quotes\">      <div class=\"blok slide1\">        <div class=\"innerblok\">        <p>Citaat 1</p>        <p>Beter een vogel in de hand dan tien in de lucht</p>        </div>      </div>      <div class=\"blok slide2\">        <div class=\"innerblok\">        <p>Citaat 2</p>        <p>Niet geschoten is altijd mis</p>        </div>      </div>      <div class=\"blok slide3\">        <div class=\"innerblok\">       <p>Citaat 3</p>        <p>De duvel is oud</p>        </div>      </div>    </div>",
   "schakelaar": false
 };
 
 // not used (yet)
 jsonData.rondleiding = {
-  "header":"Wissel-citaat",
-  "descriptionHtml":"Deze plugin heet eigenlijk joyride. Die naam zullen we verder niet meer noemen.",
-  "descriptionJs":"",
-  "features":[
-      '<a href="jquery/jquery.joyride-1.0.5-custom.js">plugin code</a>',
+  "header": "Wissel-citaat",
+  "descriptionHtml": "Deze plugin heet eigenlijk joyride. Die naam zullen we verder niet meer noemen.",
+  "descriptionJs": "",
+  "features": [
+    '<a href="jquery/jquery.joyride-1.0.5-custom.js">plugin code</a>'
   ],
-  "js":"",
-  "voorbeeld":"",
+  "js": "",
+  "voorbeeld": "",
   "schakelaar": true
 };
 
