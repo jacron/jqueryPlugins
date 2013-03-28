@@ -1,12 +1,12 @@
 /**
  * jquery.divs2carrousel.js
- * 
+ *
  * Another plugin that transforms all divs in a container to a carrousel.
  * This one adds controlls for next/previous and for going directly to a page.
  * Initially slides automatically between pages; this sliding stops when the user
  * chooses a page.
  * Optionally adds next/previous buttons.
- * 
+ *
  * author: Jan Croonen
  * date: 10/2012
  */
@@ -17,7 +17,7 @@
 
     var methods = {
       open: function(p_options) {
-        
+
       // +++++++++++++++++++
       //   Defaults
       // +++++++++++++++++++
@@ -33,35 +33,35 @@
           paginas = this.find('> div').not('#carrousel-control'),
           htmlStart = '<div id="carrousel-control">',
           htmlEnd = '</div>',
-          $this = this;    
+          $this = this;
 
       if (options.level == 2) {
         paginas = this.find('> div > div');
       }
-      
+
       if (options.vorigeVolgende) {
         htmlStart += '<a href="#" id="prevSlide">&lt;</a>';
         htmlEnd = '<a href="#" id="nextSlide">&gt;</a>'  + htmlEnd;
-      }  
+      }
 
       this.gotoCurrent = function(direction) {
         $.each(paginas, function(i, v) {
           if (i != carrouselTeller) {
             $(v).hide();
           }
-        });  
+        });
         $.each(paginas, function(i, v) {
           if (i == carrouselTeller) {
             /*
             if (direction == 'left') {
-              
+
             }
             if (direction == 'right') {
-              
+
             }*/
             $(v).fadeIn();
           }
-        });  
+        });
         $('#carrousel-control .page').each(function(i,v){
           var $v = $(v);
           if ($v.attr('rel') == carrouselTeller) {
@@ -125,7 +125,7 @@
             html += '<a href="#" class="page" rel="' + i + '">&nbsp;' + (i + 1) + '&nbsp;</a>';
           }
           else {
-            html += '<a href="#" class="page selected" rel="' + i + '">&nbsp;' + (i + 1) + '&nbsp;</a>';          
+            html += '<a href="#" class="page selected" rel="' + i + '">&nbsp;' + (i + 1) + '&nbsp;</a>';
           }
         });
         html += htmlEnd;
@@ -137,10 +137,10 @@
       close: function() {
         // zet timer uit
         //alert('timer uitgezet');// IE, FF does it; Chrome not
-        clearInterval(timer);        
+        clearInterval(timer);
       }
     };
-    
+
     if (methods[method]) {
         return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
     }
@@ -148,8 +148,8 @@
         return methods.open.apply(this, arguments);
     }
     else {
-        $.error('Method ' + method + ' does not exist on jQuery.dialog');
+        $.error('Method ' + method + ' does not exist on jQuery.divs2carrousel');
     }
   };
 })(jQuery);
-  
+

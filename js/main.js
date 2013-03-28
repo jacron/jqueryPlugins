@@ -1,4 +1,6 @@
 /*global $, jsonData, document */
+
+/* jQuery standard way for a self-executing function, fired when DOM is read */
 $(function () {
 
   'use strict';

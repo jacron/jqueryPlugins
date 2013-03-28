@@ -14,7 +14,7 @@ root {
   text-decoration: none;
 }
 #carrousel-control {
-  margin-top: 12px;
+  clear: both;
 }
 #carrousel-control .page,
 #prevSlide,
@@ -32,6 +32,11 @@ root {
   font-weight: bold;
   color: #f60;
   background-color: #ccc;
+}
+.slide1,
+.slide2,
+.slide3 {
+  margin-bottom: 12px;
 }
 .blok {
   border: 1px solid #ccc;
